@@ -1,0 +1,68 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+[config]
+plugins_dir = "plugins/"
+auto_setup = false
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.42.4" # rocks.nvim can also manage itself :D
+tree-sitter-toml = "0.0.31"
+"kanagawa.nvim" = "scm"
+"rocks-git.nvim" = "2.5.2"
+"rocks-treesitter.nvim" = "1.3.0"
+"rocks-config.nvim" = "3.1.0"
+"mini.icons" = "0.14.0"
+"mini.notify" = "0.14.0"
+"mini.files" = "0.14.0"
+"mini.basics" = "0.14.0"
+tree-sitter-php = "0.0.35"
+"mini.pick" = "0.14.0"
+"mini.completion" = "0.14.0"
+"nvim-lspconfig" = "1.3.0"
+"mason.nvim"= "1.10.0"
+"mason-lspconfig.nvim"= "1.31.0"
+"conform.nvim" = "8.3.0"
+"mini.comment" = "0.14.0"
+"mini.extra" = "0.14.0"
+"mini.statusline" = "0.14.0"
+"mini.git" = "0.14.0"
+"mini.diff" = "0.14.0"
+
+[plugins."which-key.nvim"]
+git = "folke/which-key.nvim"
+rev = "v3.15.0"
+
+[plugins."glow.nvim"]
+git = "eric-hansen/glow.nvim"
+rev = "main"
+
+[bundles.lsp]
+items = [
+	"mason.nvim",
+	"nvim-lspconfig",
+	"mason-lspconfig.nvim",
+	"conform.nvim",
+]
+
+[bundles.mini]
+items = [
+	"mini.icons",
+	"mini.notify",
+	"mini.files",
+	"mini.basics",
+	"mini.pick",
+	"mini.completion",
+	"mini.comment",
+	"mini.git",
+	"mini.diff",
+]
