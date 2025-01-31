@@ -33,10 +33,14 @@ tree-sitter-php = "0.0.35"
 "mason-lspconfig.nvim"= "1.31.0"
 "conform.nvim" = "8.3.0"
 "mini.comment" = "0.14.0"
-"mini.extra" = "0.14.0"
+"mini.extra" = "0.15.0"
 "mini.statusline" = "0.14.0"
 "mini.git" = "0.14.0"
 "mini.diff" = "0.14.0"
+"mini.pairs" = "0.15.0"
+"mini.snippets" = "0.15.0"
+"mini.ai" = "0.15.0"
+"lazygit.nvim" = "scm"
 
 [plugins."which-key.nvim"]
 git = "folke/which-key.nvim"
@@ -65,4 +69,8 @@ items = [
 	"mini.comment",
 	"mini.git",
 	"mini.diff",
+	"mini.pairs",
+	"mini.snippets",
+	"mini.extra",
+	"mini.ai",
 ]
