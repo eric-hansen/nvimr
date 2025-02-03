@@ -22,4 +22,23 @@ M.center_window = function()
 	}
 end
 
+M.autogroup = function (group_name, group_opts)
+	return vim.api.nvim_create_augroup(group_name, group_opts)
+end
+
+M.autocmd = function (event, callback, cmd_opts, group_name, group_opts)
+	local gn = group_name or ('augroup_' .. event)
+	local go = vim.tbl_deep_extend("force", {}, group_opts or {})
+
+	M.autogroup(gn, go)
+
+	local en = event
+	local eo = vim.tbl_deep_extend("force", cmd_opts or {}, {
+		group = gn,
+		callback = callback
+	})
+
+	vim.api.nvim_create_autocmd(en, eo)
+end
+
 return M
