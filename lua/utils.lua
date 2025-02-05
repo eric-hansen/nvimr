@@ -2,6 +2,14 @@ local keymap = vim.keymap
 
 M = {}
 
+M.preq = function(mod)
+	local ok, mod_err = pcall(require, mod)
+
+	if not ok then return nil, mod_err end
+
+	return mod_err
+end
+
 M.create_keymap = function(modes, key_combo, exec, desc, opts)
 	local _opts = vim.tbl_deep_extend("force", {}, opts or {})
 
@@ -22,11 +30,11 @@ M.center_window = function()
 	}
 end
 
-M.autogroup = function (group_name, group_opts)
+M.autogroup = function(group_name, group_opts)
 	return vim.api.nvim_create_augroup(group_name, group_opts)
 end
 
-M.autocmd = function (event, callback, cmd_opts, group_name, group_opts)
+M.autocmd = function(event, callback, cmd_opts, group_name, group_opts)
 	local gn = group_name or ('augroup_' .. event)
 	local go = vim.tbl_deep_extend("force", {}, group_opts or {})
 
